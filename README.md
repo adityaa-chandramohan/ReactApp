@@ -23,4 +23,8 @@ Wait for few mins for the containers to start and UI will be up [`http://localho
    - The login date time and the ip from which current user logged in are displayed.
    - Every login attempt will be stored in the database , but only the current successful login will be displayed. If there is a           new version of this app in future, will include logic to show the number of failed attempts before the current successful login attempt.
    - Currently the upload image feature is not available. This will be handled in future version.
+   
+3. Login as user.
+   - Once user is registered successfully, user can login with email id and password. 
+   - Multiple users with same email address is not allowed to register in the app. 
       
