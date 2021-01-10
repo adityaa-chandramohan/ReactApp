@@ -1,0 +1,33 @@
+version: '3.9'
+services:
+   database:
+    image: postgres
+    restart: always
+    environment:
+     - POSTGRES_PASSWORD=test
+     - POSTGRES_USER=user
+     - POSTGRES_DB=ApplicationDB
+    ports:
+      - "5432:5432"
+
+   backend:
+    image: server
+    ports:
+      - "5000:5000"
+    restart: on-failure
+    depends_on:
+      - database
+    links: 
+      - database
+
+   frontend:
+    image: ui
+    ports:
+      - "3000:3000"
+    restart: on-failure
+    depends_on:
+      - database
+      - backend
+    links:
+      - database
+      - backend
